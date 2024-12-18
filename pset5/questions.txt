@@ -1,0 +1,25 @@
+0.  a made up word, supposedly the longest in the English language
+1.  returns resource usage measures
+2.  16
+3.  because 'before' and 'after' are structs and therefore in order for calculate to access the members of the struct it requires the address,
+rather than the value of the struct
+4.  Reads word char by char, first checking to see if the char is alphabetical or an apostrophy, if it is then the char is added to word array.
+If the number of chars found exceeds the defined maximium length of a word then the remainder of the word is skipped over and the word array index
+is reset, ready for a new word.  This way, the first if loop is always encoutered until a word satisfying the criteria is found.  If the char is a 
+number then the first if loop is skipped and the first else if statement catches this and reads this word to the end and resets the word array index
+When a suitable word is found, the next loop through the for loop will read in a space or some punctuation, in which case the first if and if else
+statements are skipped and nothing is added to the word array. The 3rd if statement can then come into play, provided the word array index is greater
+than zero (i.e. a word satisfying the criteria has been read into the word array).
+  
+5.  Reading a whole word at a time using fscanf would mean that we would need to store that word first and then cycle through it char by 
+char to check it satisfys our definition of a word.
+6.  Because the called functions do not need to modify the values pointed at and therefore it is good practice to pass them as const, save accidently 
+overwriting the value
+7.  I used a trie as it seems like the most elegant solution.  Each node contains an array of 27 pointers to other nodes and a boolean "is_word"
+ value which is used to mark whether the node path represents a word.  When loading the dictionary the words are read in one at a time into a buffer.
+ Each char is then read from the buffer and inserted into the trie (or not if it already exisits at the appropriate position).  After dealing with
+ the last char the node at the end of the node path has its "is_word" value set to true.
+8.  0.2 secs
+9.  None really, removed some unecessary lines of code to do with assigning root to the first node but that's about it
+10. It seems pretty quick to me but my load function is twice as slow as the staff solution :(  The other functions are on par.  Perhaps there is 
+a more efficient way to convert each char of the word to an integer during load, or perhaps that step is not necessary and there is another way?

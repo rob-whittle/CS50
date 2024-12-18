@@ -1,0 +1,19 @@
+0.  BMP = 2^24, GIF = 2^8, JPG = 2^24, PNG = 2^24
+1.  GIF
+2.  lossy compression discards some information with the aim of reducing file size whilst maintaining an acceptable level of quality for the required application.  Because information is discarded the original data cannot be fully reconstructed from the compressed data.  In lossless compression the original data can be fully reconstructed from the compressed data. 
+3.  JPEG
+4.  The file is marked as deleted in the file reference table and the space the file occupied on the hard drive is marked as available for writing new data to.  Until this space is written to again, the files data still exists.
+5.  Overwrite it with random data
+6.  stdint.h is a header file that provides a set of typedefs that specify exact width integer types.  This allows code to be more portable as the width becomes independent of platform
+7.  to ensure you get an exact number of bits.  Different platforms may use different number of bits to represent an 'int' so using int8_t etc guarentees the length of your int regardless of platform.
+8.  BYTE = 1 Byte, DWORD = 4 Bytes, LONG = 4 Bytes, WORD = 2 
+9.  0x42 0x4D
+10. bfSize details the number of bytes of the bitmap file. biSize details the number of bytes required by the BITMAPINFOHEADER structure. 
+11. if biHeight is negative then the bitmap is stored top-down, so the images top row is stored first and its bottom row last.
+12. biBitCount
+13. Because the files specified may not exist, so inptr would not be pointing to anything
+14. Because we have defined the structs the correct size such that when reading in the data we just need to specify to read in the length of 1 struct
+15. 3
+16. Sets the file position indicator in the specified file.  In this case it is advancing the current position by "padding" bytes.
+17. Specifys that the offset is relative to the current position indicator
+18. Fozzy Bear
